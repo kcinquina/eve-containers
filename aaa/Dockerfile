@@ -4,7 +4,7 @@ FROM ubuntu:bionic
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y --no-install-recommends \
     install telnet curl openssh-client nano vim-tiny iputils-ping build-essential \
-    net-tools freeradius freeradius-utils tacacs+ \
+    net-tools freeradius freeradius-utils tacacs+ iproute2\
     && rm -rf /var/lib/apt/lists/*
 
 ADD https://raw.githubusercontent.com/adosztal/gns3-containers/master/aaa/clients.conf /etc/freeradius/3.0/clients.conf
